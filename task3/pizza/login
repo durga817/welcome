@@ -1,0 +1,107 @@
+import React, { useState } from 'react';
+
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // Handle login logic
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
+
+export default Login;
+
+// Registration.js
+import React, { useState } from 'react';
+
+const Registration = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleRegistration = () => {
+    // Handle registration logic
+  };
+
+  return (
+    <div>
+      <h2>Registration</h2>
+      <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+      <button onClick={handleRegistration}>Register</button>
+    </div>
+  );
+};
+
+export default Registration;
+
+import React, { useState, useEffect } from 'react';
+
+const Dashboard = () => {
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    // Fetch available pizzas from backend API
+    // Update the 'pizzas' state with the response
+  }, []);
+
+  return (
+    <div>
+      <h2>Available Pizzas</h2>
+      <ul>
+        {pizzas.map(pizza => (
+          <li key={pizza.id}>{pizza.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Dashboard;
+
+// CustomPizza.js
+import React, { useState } from 'react';
+
+const CustomPizza = () => {
+  const [base, setBase] = useState('');
+  const [sauce, setSauce] = useState('');
+  const [cheese, setCheese] = useState('');
+  const [veggies, setVeggies] = useState([]);
+
+  const handleOrder = () => {
+    // Handle order placement logic
+  };
+
+  return (
+    <div>
+      <h2>Customize Your Pizza</h2>
+      <select value={base} onChange={e => setBase(e.target.value)}>
+        <option value="">Choose a base</option>
+        {/* Render base options */}
+      </select>
+      <select value={sauce} onChange={e => setSauce(e.target.value)}>
+        <option value="">Choose a sauce</option>
+        {/* Render sauce options */}
+      </select>
+      <select value={cheese} onChange={e => setCheese(e.target.value)}>
+        <option value="">Choose a cheese</option>
+        {/* Render cheese options */}
+      </select>
+      <div>
+        <h4>Choose Veggies</h4>
+        {/* Render checkboxes for veggie options */}
+      </div>
+      <button onClick={handleOrder}>Place Order</button>
+    </div>
+  );
+};
+
+export default CustomPizza;
